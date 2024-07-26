@@ -1,0 +1,527 @@
+@import '@fontsource/noto-sans-kr/korean-300.css';
+@import '@fontsource/noto-sans-kr/korean-400.css';
+@import '@fontsource/noto-sans-kr/korean-700.css';
+/* @import 'splitpanes/dist/splitpanes.css'; */
+/* @import 'swiper/swiper-bundle.css'; */
+/* @import 'tippy.js/dist/tippy.css'; */
+/* @import '@vuepic/vue-datepicker/dist/main.css'; */
+/* @import 'vue3-toastify/dist/index.css'; */
+/* @import '@vueup/vue-quill/dist/vue-quill.snow.css'; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #app {
+    /*font-family: 'SF Pro Display', Avenir, Helvetica, Arial, sans-serif;*/
+    font-family: 'Noto Sans KR', 'SF Pro Text', '-apple-system', 'Roboto', 'Arial', 'sans-serif';
+  }
+
+  /*input::-webkit-input-placeholder {*/
+  /*  line-height: 1;*/
+  /*}*/
+}
+
+@layer components {
+  input[type='text'].xs-input,
+  input[type='number'].xs-input,
+  input[type='text'].xs-input-clear,
+  input[type='number'].xs-input-clear,
+  input[type='text'].xs-input-maxlength,
+  input[type='number'].xs-input-maxlength,
+  input[type='text'].xs-input-search,
+  input[type='number'].xs-input-search,
+  input[type='text'].xs-input-error,
+  input[type='number'].xs-input-error,
+  input[type='number'].xs-input,
+  input[type='number'].xs-input-clear,
+  input[type='number'].xs-input-maxlength,
+  input[type='number'].xs-input-search,
+  label input[disabled]:checked ~ span.checkbox:before {
+    opacity: 0.3;
+  }
+  .shadow-outline {
+    @apply shadow-outline;
+  }
+  .shadow-outline:focus {
+    @apply ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60;
+  }
+  .scrollbar::-webkit-scrollbar {
+    width: 0.65rem;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    height: 30%;
+    background: #e7eaef;
+    border-radius: 8px;
+    background-clip: padding-box;
+    border: 0.15rem solid transparent;
+  }
+
+  .overlay {
+    overflow: overlay;
+  }
+  /* 240305/yo/커스텀 css 추가 */
+  .login-form {
+    @apply bg-white p-8 border border-gray-300 rounded-lg shadow-md;
+  }
+
+  .login-input {
+    @apply w-full p-3 mt-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300;
+  }
+
+  .login-button {
+    @apply mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-300;
+  }
+  /* 추가적인 focus 상태의 스타일을 여기에 작성 */
+
+  .login-icon {
+    @apply inline-block h-6 w-6 text-gray-500;
+  }
+}
+
+@layer utilities {
+  /** splitpanes */
+  .default-theme.splitpanes--vertical .splitpanes__pane {
+    transition: none;
+    overflow: inherit;
+  }
+
+  .default-theme.splitpanes--vertical > .splitpanes__splitter,
+  .default-theme .splitpanes--vertical > .splitpanes__splitter {
+    width: 5px;
+    border-left: none;
+    margin-left: -2px;
+    background-color: #f4f6f9;
+  }
+  .default-theme.splitpanes--vertical .default-theme.splitpanes--vertical > .splitpanes__splitter,
+  .default-theme .splitpanes--vertical .default-theme .splitpanes--vertical > .splitpanes__splitter {
+    background-color: #fff;
+    border-left: 1px solid #f1f2f6;
+  }
+  .default-theme.splitpanes--vertical > .splitpanes__splitter:hover,
+  .default-theme .splitpanes--vertical > .splitpanes__splitter:hover,
+  .default-theme.splitpanes--vertical .default-theme.splitpanes--vertical > .splitpanes__splitter:hover,
+  .default-theme .splitpanes--vertical .default-theme.splitpanes--vertical > .splitpanes__splitter:hover {
+    background-color: #feec00;
+  }
+  .default-theme.splitpanes--vertical > .splitpanes__splitter:before,
+  .default-theme .splitpanes--vertical > .splitpanes__splitter:before,
+  .default-theme.splitpanes--vertical > .splitpanes__splitter:after,
+  .default-theme .splitpanes--vertical > .splitpanes__splitter:after {
+    display: none;
+  }
+
+  /* swiper */
+  .swiper {
+    max-width: 100%;
+  }
+
+  .swiper-navigation-emoji .swiper-button-prev:after,
+  .swiper-navigation-emoji .swiper-button-next:after {
+    font-size: 16px;
+    color: #212121;
+  }
+
+  .swiper-navigation-emoji .swiper-button-prev,
+  .swiper-navigation-emoji .swiper-button-next {
+    top: 16px;
+  }
+
+  .swiper-navigation-emoji .swiper-button-prev {
+    left: 0;
+    background-color: #fff;
+  }
+
+  .swiper-navigation-emoji .swiper-button-next {
+    right: 0;
+    background-color: #fff;
+  }
+
+  /* Pagination */
+  .v3-pagination ul,
+  .v3-pagination .Page,
+  .v3-pagination .PaginationControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    border: none;
+    font-size: 14px;
+  }
+  .v3-pagination .Page.Page-active {
+    background-color: #f4f6f9 !important;
+    border-radius: 4px;
+  }
+
+  .v3-pagination .PaginationControl {
+    margin: 0 12px;
+    opacity: 0.3;
+    cursor: pointer;
+  }
+
+  .listbox-options::-webkit-scrollbar {
+    width: 0.65rem;
+  }
+  .listbox-options::-webkit-scrollbar-thumb {
+    height: 30%;
+    background: #e7eaef;
+    border-radius: 8px;
+    background-clip: padding-box;
+    border: 0.15rem solid transparent;
+  }
+
+  .listbox-option.hidden {
+    display: none;
+  }
+}
+
+/* Editor */
+.ql-editor.ql-blank::before {
+  font-style: normal;
+  font-size: 14px;
+  color: #adb2bc;
+}
+
+.ql-toolbar.ql-snow {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  padding: 12px 8px;
+  background-color: #efefef;
+  border: none;
+}
+
+.ql-container.ql-snow {
+  border: none;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* vue3datepicker */
+.dp__arrow_top {
+  left: 30%;
+}
+.dp__clear_icon {
+  display: none !important;
+}
+.dp__input_icon {
+  left: auto;
+  right: 4px;
+}
+.dp__full .dp__outer_menu_wrap {
+  width: 100%;
+}
+.dp__small {
+  width: 50%;
+}
+
+.dp__clear_border .dp__menu {
+  border: 0;
+}
+.dp__cell_inner {
+  border-radius: 2em;
+}
+.dp__calendar {
+  margin-left: 7px;
+}
+/* .dp__calendar_header > div:last-child,
+.dp__calendar_row > div:last-child {
+  color: #f24822;
+} */
+.dp__calendar_header > div:first-child,
+.dp__calendar_row > div:first-child {
+  color: #f24822;
+}
+.dp__cell_offset {
+  color: currentcolor;
+  opacity: 0.2;
+}
+.dp__calendar_header_separator {
+  display: none;
+}
+.dp__month_year_wrap {
+  flex-direction: row-reverse;
+}
+.dp__theme_light {
+  --dp-background-color: #ffffff;
+  --dp-text-color: #212121;
+  --dp-hover-color: #f3f3f3;
+  --dp-hover-text-color: #212121;
+  --dp-hover-icon-color: #959595;
+  --dp-primary-color: #212121;
+  --dp-primary-text-color: #ffffff;
+  --dp-secondary-color: #c0c4cc;
+  --dp-border-color: #e7eaef;
+  --dp-menu-border-color: #ddd;
+  --dp-border-color-hover: #000;
+  --dp-disabled-color: #f6f6f6;
+  --dp-scroll-bar-background: #f3f3f3;
+  --dp-scroll-bar-color: #959595;
+  --dp-success-color: #76d275;
+  --dp-success-color-disabled: #a3d9b1;
+  --dp-icon-color: #000;
+  --dp-danger-color: #ff6f60;
+  --dp-highlight-color: rgba(25, 118, 210, 0.1);
+}
+:root {
+  /* vue3datepicker General */
+  --dp-font-family: 'Noto Sans KR', 'SF Pro Text', '-apple-system', 'Roboto', 'Arial', 'sans-serif';
+  --dp-border-radius: 6px; /*Configurable border-radius*/
+  --dp-cell-border-radius: 6px; /*Specific border radius for the calendar cell*/
+  --dp-common-transition: all 0.1s ease-in; /*Generic transition applied on buttons and calendar cells*/
+
+  /* vue3datepicker Sizing */
+  --dp-button-heigh: 35px; /*Size for buttons in overlays*/
+  --dp-month-year-row-height: 35px; /*Height of the month-year select row*/
+  --dp-month-year-row-button-size: 35px; /*Specific height for the next/previous buttons*/
+  --dp-button-icon-height: 20px; /*Icon sizing in buttons*/
+  --dp-cell-size: 35px; /*Width and height of calendar cell*/
+  --dp-cell-padding: 5px; /*Padding in the cell*/
+  --dp-common-padding: 10px; /*Common padding used*/
+  --dp-input-icon-padding: 8px; /*Padding on the left side of the input if icon is present*/
+  --dp-input-padding: 6px 30px 6px 0; /*Padding in the input*/
+  --dp-menu-min-width: 260px; /*Adjust the min width of the menu*/
+  --dp-action-buttons-padding: 2px 5px; /*Adjust padding for the action buttons in action row*/
+  --dp-row-maring: 5px 0; /*Adjust the spacing between rows in the calendar*/
+  --dp-calendar-header-cell-padding: 0.5rem; /*Adjust padding in calendar header cells*/
+  --dp-two-calendars-spacing: 10px; /*Space between multiple calendars*/
+  --dp-overlay-col-padding: 3px; /*Padding in the overlay column*/
+  --dp-time-inc-dec-button-size: 32px; /*Sizing for arrow buttons in the time picker*/
+  --dp-menu-padding: 6px 8px; /*Menu padding*/
+
+  /* vue3datepicker Font sizes */
+  --dp-font-size: 12px; /*Default font-size*/
+  --dp-preview-font-size: 12px; /*Font size of the date preview in the action row*/
+  --dp-time-font-size: 12px; /*Font size in the time picker*/
+
+  /* vue3datepicker Transitions */
+  --dp-animation-duration: 0.1s; /*Transition duration*/
+  --dp-menu-appear-transition-timing: cubic-bezier(0.4, 0, 1, 1); /*Timing on menu appear animation*/
+  --dp-transition-timing: ease-out; /*Timing on slide animations*/
+
+  /* vue3-toastify */
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #3498db;
+  --toastify-color-success: #07bc0c;
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: #e74c3c;
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+  /*--toastify-icon-color-info: var(--toastify-color-info);*/
+  --toastify-icon-color-info: #feec00;
+  /*--toastify-icon-color-success: var(--toastify-color-success);*/
+  --toastify-icon-color-success: #feec00;
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: #fff;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+
+  --toastify-text-color-info: #fff;
+  --toastify-text-color-success: #fff;
+  --toastify-text-color-warning: #fff;
+  --toastify-text-color-error: #fff;
+
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+
+  --toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  --toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+
+  /* fullcalendar */
+  --fc-small-font-size: 0.85em;
+  --fc-page-bg-color: #fff;
+  --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
+  --fc-neutral-text-color: #808080;
+  --fc-border-color: #ddd;
+
+  --fc-button-text-color: #000;
+  --fc-button-bg-color: #fff;
+  --fc-button-border-color: #2c3e50;
+  --fc-button-hover-bg-color: #1e2b37;
+  --fc-button-hover-border-color: #1a252f;
+  --fc-button-active-bg-color: #1a252f;
+  --fc-button-active-border-color: #151e27;
+
+  --fc-event-bg-color: #3788d8;
+  --fc-event-border-color: #3788d8;
+  --fc-event-text-color: #fff;
+  --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+
+  --fc-more-link-bg-color: #d0d0d0;
+  --fc-more-link-text-color: inherit;
+
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+
+  --fc-non-business-color: rgba(215, 215, 215, 0.3);
+  --fc-bg-event-color: rgb(143, 223, 130);
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  /* --fc-today-bg-color: none; */
+  --fc-today-bg-color: rgba(255, 220, 40, 0.15);
+  --fc-now-indicator-color: red;
+}
+
+.vuecal--date-picker:not(.vuecal--day-view) .vuecal__cell--selected .vuecal__cell-content {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: black !important;
+}
+
+.vuecal__cell--current .vuecal__cell-content,
+.vuecal--date-picker:not(.vuecal--day-view) .vuecal__cell--today .vuecal__cell-content {
+  border-color: #000 !important;
+}
+
+/* fullcalendar 테두리 설정 */
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: none;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: none !important;
+}
+
+/* daygrid 날짜 위치 변경 */
+.fc-daygrid-day-top {
+  flex-direction: column !important;
+  justify-content: flex-start;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+/* 각 셀의 외곽선 */
+.fc-daygrid-day {
+  border: none !important;
+  border-right: 1px solid var(--fc-border-color) !important;
+  border-top: 1px solid var(--fc-border-color) !important;
+}
+
+.fc-day-sun {
+  color: #f24822;
+}
+
+/* 이벤트 영역 설정 */
+.fc-daygrid-day-events {
+  position: absolute !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  top: 30px;
+  left: 3px;
+  right: 0;
+  bottom: 0;
+}
+
+.fc-event-title {
+  /* overflow-x: hidden !important; */
+  white-space: normal;
+}
+
+/* 이벤트 점, 시간 baseLine 설정 */
+.fc-event-time,
+.fc-daygrid-event-dot {
+  align-self: baseline;
+}
+
+/* 스크롤바 너비  */
+.fc-daygrid-day-events::-webkit-scrollbar {
+  width: 4px;
+}
+/* 스크롤바의 핸들 (이동 부분) */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.fc-col-header {
+  border-bottom: 1px solid var(--fc-border-color) !important;
+}
+
+.fc-timegrid-slot-minor {
+  border-top-style: none !important;
+}
+
+.fc .fc-timegrid-slot .fc-timegrid-slot-lane {
+  height: 30px !important;
+}
+
+/* timeGrid 시간 줄 */
+.fc .fc-timegrid-slot-lane {
+  border-top: 1px solid var(--fc-border-color);
+}
+
+.fc-scrollgrid-section tr {
+  border-bottom: none !important;
+}
+
+/* timeGrid 오전 12시 안보이게 */
+.fc-timegrid-slots tbody tr:first-child td:first-child {
+  display: none;
+}
+
+/* timeGrid 좌측 시간 텍스트 설정 */
+.fc-direction-ltr .fc-timegrid-slot-label-frame {
+  text-align: right;
+  position: relative;
+  top: -12px;
+  right: 2px;
+  font-size: 12px;
+}
+
+/* vueCal 설정 */
+.vuecal__title-bar {
+  background-color: white !important;
+}
+
+/* .selectedDay {
+  background-color: red !important;
+} */
+
+/* datePicker에서 이벤트 있는 날짜 표시 */
+.eventDot {
+  background-color: red;
+  height: 3px;
+  width: 3px;
+  position: absolute;
+  top: 5px;
+  /* bottom: 3px; */
+}
+
+/* vuecal Picker 이벤트 날짜 설정 */
+.vuecal__cell-events-count {
+  font-size: 0px !important;
+  background-color: red !important;
+  width: 3px !important;
+  height: 3px !important;
+  position: absolute !important;
+  top: 1px !important;
+  transform: none !important;
+  padding: 0 0px !important;
+  align-self: center !important;
+  min-width: 1px !important;
+  left: auto !important;
+}
+
+/* vuecal Picker 일요일 색상 */
+.vuecal__weekdays-headings > div:first-child,
+.vuecal__cell--day7 {
+  color: #f24822;
+}

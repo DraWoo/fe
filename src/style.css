@@ -1,0 +1,46 @@
+@import "@fontsource/noto-sans-kr/korean-300.css";
+@import "@fontsource/noto-sans-kr/korean-400.css";
+@import "@fontsource/noto-sans-kr/korean-700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #app {
+    @apply text-primary h-full text-[14px] font-sans;
+  }
+  h1 {
+    @apply text-6xl font-bold text-primary;
+  }
+  input[type="text"],
+  input[type="password"] {
+    @apply h-11 px-4 border-2 border-secondary focus:border-primary rounded-lg text-base placeholder-secondary;
+  }
+  .btn-primary {
+    @apply bg-button-blue py-2 px-4 rounded text-white font-bold hover:bg-button-blue-hover;
+  }
+}
+
+@layer components {
+  .board-container {
+    @apply max-w-6xl mx-auto mt-10 p-6 bg-white shadow rounded-lg;
+  }
+  .post-item {
+    @apply my-5 p-4 border-b border-secondary;
+  }
+  .post-title {
+    @apply text-lg font-bold;
+  }
+  .post-content {
+    @apply my-2 text-primary;
+  }
+  .post-meta {
+    @apply text-sm text-gray-500;
+  }
+  .logout-button {
+    @apply py-2 px-4 ml-1 bg-orange-500 text-white rounded hover:bg-orange-700;
+  }
+}
