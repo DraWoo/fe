@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # fe
 vue composition api front
-=======
+
 # YO Frontend Vite Application
 
 이 프로젝트는 Vite와 Vue 3를 기반으로 구축된 프론트엔드 애플리케이션입니다. 개발의 효율성을 높이고 최신 웹 기술을 활용하기 위해 여러 툴과 라이브러리를 통합했습니다.
@@ -33,4 +33,4 @@ vue composition api front
 2. 다음 명령어로 필요한 의존성을 설치합니다:
    ```sh
    npm install
->>>>>>> 124ee397 (vue 환경설정 완료)
+
